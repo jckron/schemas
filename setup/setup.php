@@ -19,11 +19,32 @@ function createTables(){
 		dissolutionDate DATETIME,
 		diversityPolicy VARCHAR(250),
 		#diversityPolicy INT(11),
-		duns VARCHAR(150),
-		
-		power SET('0','1'),
 		diversityStaffingReport VARCHAR(250),
 		#diversityStaffingReport INT(11),
+		duns VARCHAR(150),
+		email VARCHAR(150),
+		employee INT(11),
+		ethicsPolicy VARCHAR(250),
+		#ethicsPolicy INT(11),
+		event  INT(11),
+		faxNumber VARCHAR(150),
+		founder INT(11),
+		foundedDate DATETIME,
+		foundingLocation INT(11),
+		funder INT(11),
+		globalLocationNumber INT(13),
+		hasCredential TEXT,
+		hasOfferCatalog TEXT,
+		hasPOS TEXT,
+		hasProductReturnPolicy VARCHAR(250),
+		#hasProductReturnPolicy INT(11),
+		isicV4 VARCHAR(100),
+		knowsAbout TEXT,
+		knowsLanguage TEXT,
+		
+
+
+		power SET('0','1'),
 		recordCreated DATETIME,
 		timestamp TIMESTAMP
 		)";

@@ -7,6 +7,8 @@ MYSQL
 * Name Tables with leading capital (e.g. 'Tables' not 'tables')
 	* This helps distinguish between Table names and Column (Cell) names
 * Column names should be Camelcase for this project, in order to remain consistenet with Schema.org field name conventions
+* Tables should be created for each unique schema
+* Do not clone, replicate or duplicate fields across tables. Instead use the reference ID from the table record where the field is defined.
 
 ### Organization
 Specific notes & information relating to the development of the Organization schema
@@ -19,8 +21,26 @@ Specific notes & information relating to the development of the Organization sch
 * **diversityPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
 * **diversityStaffingReport** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
 * **duns** [Dun & Bradstreet DUNS number][duns]
+* **employee** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **ethicsPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
+* **event** is an array of ids from the "Event" table/schema (e.g. event.id)
+* **foundere** is a numeric id from the "Person" table/schema (e.g. Person.id)
+* **foundingLocation** is a numeric id from the "Place" table/schema (e.g. Place.id)
+* **funder** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **globalLocationNumber** [Global Location Number (GLN)][gln]
+* **hasCredential** is an array of ids from the "EducationalOrganizationalCredential" table/schema (e.g. EducationalOrganizationalCredential.id)
+* **hasCredential** is an array of ids from the "OfferCatalog" table/schema (e.g. OfferCatalog.id)
+* **hasPOS** is an array of ids from the "Place" table/schema (e.g. Place.id)
+* **hasProductReturnPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
+* **knowsAbout** is an arrays of ids from the following table/schemas:
+	* "Thing" (prefix *thing_*)
+	* "Person" (prefix *person_*)
+	* "Organization" (prefix *organization_*)
+	* "Event" (prefix *event_*)
+* **knowsLanguage** is an array of ids from the "Language" table/schema (e.g. Language.id)
 
 ###### References
 * [Dun & Bradstreet DUNS number][duns]
 
 [duns]: https://www.dnb.com/duns-number.html
+[gln]: https://www.gs1.org/standards/id-keys/gln
