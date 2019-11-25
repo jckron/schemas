@@ -21,4 +21,4 @@ Specific notes & information relating to the development of the Organization sch
 * **duns** [Dun & Bradstreet DUNS number][duns]
 
 ###### References
-[duns] : https://www.dnb.com/duns-number.html
+[duns]: https://www.dnb.com/duns-number.html
