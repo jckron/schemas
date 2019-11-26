@@ -54,6 +54,7 @@ Specific notes & information relating to the development of the Organization sch
 
 ###### References
 * [Dun & Bradstreet DUNS number][duns]
+* [Global Location Number (GLN)][gln]
 
 [duns]: https://www.dnb.com/duns-number.html
 [gln]: https://www.gs1.org/standards/id-keys/gln
