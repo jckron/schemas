@@ -176,9 +176,10 @@ For example, we don't ever need to ask a user to provide a Name, Given Name and 
 Person.givenName + Person.familyName -> Populates Thing.name
 
 ###### References
-* [Schema.org][schema]
+* [Accessibility Values][accessibility]
 * [Dun & Bradstreet DUNS number][duns]
 * [Global Location Number (GLN)][gln]
+* [Schema.org][schema]
 
 [schema]: https://schema.org
 [duns]: https://www.dnb.com/duns-number.html
