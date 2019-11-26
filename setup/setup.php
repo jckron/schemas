@@ -205,8 +205,71 @@ function createTables(){
 		timestamp TIMESTAMP		
 		)";
 	$conn->query($place);
+	// Create CreativeWorks Table
+	// Ref: https://schema.org/Place
+	$place = "CREATE TABLE Place(
+		id INT(11) AUTO_INCREMENT PRIMARY KEY,
+		additionalproperty TEXT,
+		address VARCHAR(250),
+		aggregateRating INT(11),
+		amenityFeature TEXT,
+		branchCode VARCHAR(100),
+		containedInPlace INT(11),
+		event  INT(11),
+		faxNumber VARCHAR(150),
+		geo INT(11),
+		geoContains TEXT,
+		geoCoveredBy TEXT,
+		geoCovers TEXT,
+		geoCrosses TEXT,
+		geoDisjoint TEXT,
+		geoEquals TEXT,
+		geoIntersects TEXT,
+		geoOverlaps TEXT,
+		geoTouches TEXT,
+		geoWithin TEXT,
+		globalLocationNumber INT(13),
+		hasMap VARCHAR(150),
+		isAccessibleForFree SET('0','1'),
+		isicV4 VARCHAR(100),
+		latitude VARCHAR(150),
+		logo VARCHAR(250),
+		longitude VARCHAR(150),
+		maximumAttendeeCaoacity INT(11),
+		openingHoursSpecification INT(11),
+		photo TEXT,
+		publicAccess SET('0','1'),
+		review TEXT,
+		slogan VARCHAR(250),
+		smokingAllowed SET('0','1'),
+		specialOpeningHoursSpecification INT(11),
+		telephone VARCHAR(30),
+		power SET('0','1'),
+		recordCreated DATETIME,
+		recordModified DATETIME,
+		timestamp TIMESTAMP		
+		)";
+	// Create CreativeWork Table
+	// Ref: https://schema.org/CreativeWork
+	$creativeWork = "CREATE TABLE CreativeWork(
+		id INT(11) AUTO_INCREMENT PRIMARY KEY,
+		about VARCHAR(250),
+		abstract TEXT,
+		accessMode TEXT,
+		accessModeSufficient TEXT,
+		accessibilityAPI TEXT,
+		accessibilityControl TEXT,
+		accessibilityFeature VARCHAR(250),
+		accessibilityHazard TEXT,
+		accessibilitySummary TEXT,
 
 
+		power SET('0','1'),
+		recordCreated DATETIME,
+		recordModified DATETIME,
+		timestamp TIMESTAMP		
+		)";
+	$conn->query($creativeWork);
 }
 
 // ****** DEBUG Table Setup ******* //

@@ -152,6 +152,10 @@ Specific notes & information relating to the development of the Place schema
 * **review** is an array of ids from the "Review" table/schema (e.g. Review.id)
 * **specialOpeningHoursSpecification** is a numeric id (INT) from the "OpeningHoursSpecification" table/schema (e.g. OpeningHoursSpecification.id)
 
+#### CreativeWork
+Specific notes & information relating to the development of the CreativeWork schema
+* **about** is a numeric id (INT) from the "CreativeWork" table/schema (e.g. CreativeWork.id) (Self-referencing)
+* **accessibility[X]** [Accessibility Values][accessibility]
 
 
 ### Populating Content (Programming)
@@ -179,3 +183,4 @@ Person.givenName + Person.familyName -> Populates Thing.name
 [schema]: https://schema.org
 [duns]: https://www.dnb.com/duns-number.html
 [gln]: https://www.gs1.org/standards/id-keys/gln
+[accessibility]: https://www.w3.org/wiki/WebSchemas/Accessibility
