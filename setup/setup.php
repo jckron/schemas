@@ -2,7 +2,8 @@
 function createTables(){
 	include('../config.php');
 	// Create Organizations Table
-	$organizations = "CREATE TABLE Organization(
+	// Ref: https://schema.org/Organization
+	$organization = "CREATE TABLE Organization(
 		id INT(11) AUTO_INCREMENT PRIMARY KEY,
 		actionableFeedbackPolicy TEXT,
 		address VARCHAR(250),
@@ -41,26 +42,41 @@ function createTables(){
 		isicV4 VARCHAR(100),
 		knowsAbout TEXT,
 		knowsLanguage TEXT,
-		
-
-
+		legalName VARCHAR(250),
+		leiCode VARCHAR(250),
+		location TEXT,
+		logo VARCHAR(250),
+		makesOffer TEXT,
+		member TEXT,
+		memberOf TEXT,
+		naics VARCHAR(250),
+		numberOfEmployees INT(11),
+		ownershipFundingInfo VARCHAR(250),
+		#ownershipFundingInfo INT(11),
+		publishingPrinciples VARCHAR(250),
+		#publishingPrinciples INT(11),
+		seeks TEXT,
+		slogan VARCHAR(250),
+		sponsor TEXT,
+		subOrganization TEXT,
+		taxID VARCHAR(250),
+		telephone VARCHAR(30),
+		unnamedSourcesPolicy VARCHAR(250),
+		#unnamedSourcesPolicy INT(11),
+		vatID VARCHAR(250),
 		power SET('0','1'),
 		recordCreated DATETIME,
+		recordModified DATETIME,
 		timestamp TIMESTAMP
 		)";
-	$conn->query($users);
-
-	mysqli_close($conn);
-	header('Location:../admin/');
+	$conn->query($organization);
+	#header('Location:../admin/');
 }
 
 // ****** DEBUG Table Setup ******* //
 /*
-if(mysqli_query($conn, $questions)){
-		echo "Questions table created.";
-	}
-	else{
-		echo "Error creating Questions table: " . mysqli_error($conn);
-	}
+
 */
+createTables();
+mysqli_close($conn);
 ?>

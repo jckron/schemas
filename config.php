@@ -2,7 +2,7 @@
 	// ***** Database Connection ***** //
 
 	// LOCAL DATABASE
-	define ("DB_NAME", "schemas");
+	define ("DB_NAME", "schema");
 	define ("DB_HOST", "localhost");
 	define ("DB_USER", "root");
 	define ("DB_PASSWD", "root");

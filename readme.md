@@ -24,7 +24,7 @@ Specific notes & information relating to the development of the Organization sch
 * **employee** is an array of ids from the "Person" table/schema (e.g. Person.id)
 * **ethicsPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
 * **event** is an array of ids from the "Event" table/schema (e.g. event.id)
-* **foundere** is a numeric id from the "Person" table/schema (e.g. Person.id)
+* **founder** is a numeric id from the "Person" table/schema (e.g. Person.id)
 * **foundingLocation** is a numeric id from the "Place" table/schema (e.g. Place.id)
 * **funder** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
 * **globalLocationNumber** [Global Location Number (GLN)][gln]
@@ -38,6 +38,19 @@ Specific notes & information relating to the development of the Organization sch
 	* "Organization" (prefix *organization_*)
 	* "Event" (prefix *event_*)
 * **knowsLanguage** is an array of ids from the "Language" table/schema (e.g. Language.id)
+* **location** is an array of ids from the "Place" table/schema (e.g. Place.id)
+* **logo** is a text url, *alternatively* this can be a numeric id (INT) from the "Image" table/schema (e.g. Image.id)
+* **makesOffer** is an array of ids from the "Offer" table/schema (e.g. Offer.id)
+* **member** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **memberOf** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **ownershipFundingInfo** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
+* **owns** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **parentOrganization** is a numeric id (INT) from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **publishingPrinciples** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
+* **seeks** is an array of ids from the "Demand" table/schema (e.g. Demand.id)
+* **sponsor** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **subOrganization** is an array of ids from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
+* **unnamedSourcesPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
 
 ###### References
 * [Dun & Bradstreet DUNS number][duns]
