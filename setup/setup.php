@@ -32,7 +32,7 @@ function createTables(){
 		founder INT(11),
 		foundedDate DATETIME,
 		foundingLocation INT(11),
-		funder INT(11),
+		funder TEXT,
 		globalLocationNumber INT(13),
 		hasCredential TEXT,
 		hasOfferCatalog TEXT,
@@ -70,7 +70,73 @@ function createTables(){
 		timestamp TIMESTAMP
 		)";
 	$conn->query($organization);
-	#header('Location:../admin/');
+
+	// Create Person Table
+	// Ref: https://schema.org/Person
+	$person = "CREATE TABLE Person(
+		id INT(11) AUTO_INCREMENT PRIMARY KEY,
+		additionalName VARCHAR(250),
+		address VARCHAR(250),
+		affiliation TEXT,
+		alumniOf TEXT,
+		award VARCHAR(250),
+		birthDate DATETIME,
+		birthPlace INT(11),
+		brand TEXT,
+		callSign VARCHAR(250),
+		children TEXT,
+		colleague TEXT,
+		contactPoint INT(11),
+		deathDate DATETIME,
+		deathPlace INT(11),
+		duns VARCHAR(150),
+		email VARCHAR(150),
+		familyName VARCHAR(250),
+		faxNumber VARCHAR(30),
+		follows TEXT,
+		funder TEXT,
+		gender SET('M','F'),
+		givenName VARCHAR(250),
+		globalLocationNumber INT(13),
+		hasCredential TEXT,
+		hasOccupation INT(13),
+		hasOfferCatalog TEXT,
+		hasPOS TEXT,
+		height INT(11),
+		homeLocation INT(11),
+		honorificPrefix VARCHAR(100),
+		honorificSuffix VARCHAR(100),
+		isicV4 VARCHAR(100),
+		jobTitle VARCHAR(250),
+		knows TEXT,
+		knowsAbout TEXT,
+		knowsLanguage TEXT,
+		makesOffer TEXT,
+		memberOf TEXT,
+		naics VARCHAR(250),
+		nationality TEXT,
+		netWorth INT(11),
+		owns TEXT,
+		parent TEXT,
+		performerIn TEXT,
+		publishingPrinciples VARCHAR(250),
+		#publishingPrinciples INT(11),
+		relatedTo TEXT,
+		seeks TEXT,
+		sibling TEXT,
+		sponsor TEXT,
+		taxID VARCHAR(250),
+		telephone VARCHAR(30),
+		vatID VARCHAR(250),
+		weight INT(11),
+		workLocation INT(11),
+		worksFor INT(11),
+		power SET('0','1'),
+		recordCreated DATETIME,
+		recordModified DATETIME,
+		timestamp TIMESTAMP
+		)";
+	$conn->query($person);
 }
 
 // ****** DEBUG Table Setup ******* //
@@ -79,4 +145,5 @@ function createTables(){
 */
 createTables();
 mysqli_close($conn);
+#header('Location:../admin/');
 ?>
