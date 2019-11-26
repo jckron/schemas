@@ -19,6 +19,10 @@ So the main identifier of any*thing* in this database, is the Thing.id
 
 When a new entity of any type is created, the Thing.id must generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
 
+Specific notes & information relating to the development of the Thing schema
+
+* **image** is a text url, *alternatively* this can be a numeric id (INT) from the "Image" table/schema (e.g. Image.id)
+
 #### Organization
 Specific notes & information relating to the development of the Organization schema
 * **alumni** is an array of ids from the "Person" table/schema (e.g. Person.id)

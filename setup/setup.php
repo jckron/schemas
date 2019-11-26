@@ -5,8 +5,13 @@ function createTables(){
 	// Ref: https://schema.org/Thing
 	$thing = "CREATE TABLE Thing(
 		id INT(11) AUTO_INCREMENT PRIMARY KEY,
-		
-				)";
+		additionalType VARCHAR(250),
+		alternateName VARCHAR(250),
+		description TEXT,
+		disambiguatingDescription TEXT,
+		identifier TEXT,
+		image varchar(250),
+		)";
 	$conn->query($thing);
 	// Create Organization Table
 	// Ref: https://schema.org/Organization
