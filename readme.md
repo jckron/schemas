@@ -22,6 +22,9 @@ When a new entity of any type is created, the Thing.id must generated and create
 Specific notes & information relating to the development of the Thing schema
 
 * **image** is a text url, *alternatively* this can be a numeric id (INT) from the "Image" table/schema (e.g. Image.id)
+* **potentialAction** is an array of ids from the "Action" table/schema (e.g. action.id)
+* **sameAs** set to a VARCHAR (accepts url). QUESTION: Could this be an array? i.e. Does the sameAs schema accept multiple records?
+* **subjectOf** is an array of ids from the "CreativeWork" table/schema (e.g. CreativeWork.id)
 
 #### Organization
 Specific notes & information relating to the development of the Organization schema
@@ -125,15 +128,48 @@ Specific notes & information relating to the development of the Person schema
 * **workLocation** is a numeric id (INT) from the "Place" table/schema (e.g. Place.id)
 * **worksFor** is a numeric id (INT) from the "Organization" table/schema (e.g. Organization.id)
 
+#### Place
+Specific notes & information relating to the development of the Place schema
+* **additionalProperty** is an array of ids from the "Property/Value" table/schema (e.g. PropertyValue.id)
+* **amenityFeature** is an array of ids from the "LocationFeatureSpecification" table/schema (e.g. LocationFeatureSpecification.id)
+* **containedInPlace** is a numeric id (INT) from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **containsPlace** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **event** is an array of ids from the "Event" table/schema (e.g. event.id)
+* **geo** is a numeric id (INT) from the "GeoCoordinates" table/schema (e.g. GeoCoordinates.id)
+* **geoContains** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoCoveredBy** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoCovers** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoCrosses** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoDisjoint** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoEquals** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoIntersects** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoOverlaps** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoTouches** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **geoWithin** is an array of ids from the "Place" table/schema (e.g. Place.id) (Self-referencing)
+* **globalLocationNumber** [Global Location Number (GLN)][gln]
+* **openingHoursSpecification** is a numeric id (INT) from the "OpeningHoursSpecification" table/schema (e.g. OpeningHoursSpecification.id)
+* **photo** is an array of ids from the "Image" table/schema (e.g. Image.id)
+* **review** is an array of ids from the "Review" table/schema (e.g. Review.id)
+* **specialOpeningHoursSpecification** is a numeric id (INT) from the "OpeningHoursSpecification" table/schema (e.g. OpeningHoursSpecification.id)
 
-### Populating Content
+
+
+### Populating Content (Programming)
 
 #### Rules:
 
-* When a new entity of any type is created, the Thing.id must generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
+* When a new entity of any type is created, the Thing.id must be the first entry generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
 
 #### Guidelines:
+
 #### Suggestions:
+
+#### Similar Fields
+Please look carefully at the list to make sure your similar fields aren't already included before adding new list items. These lists are to make it easier for programmers to quickly identify similar fields across tables and make sure the capturing of data is thorough, complete and efficient. 
+
+For example, we don't ever need to ask a user to provide a Name, Given Name and Family Name (which would be confusing). If we are creating a new Person in the system, we need only ask them to provide First Name (givenName) and Last Name (familyName) in distinct fields and from that input we can populate the Thing.name (a compound of the two). A thing name could also possibly be exploded to populate the Person.givenName and Person.familyName but this is not the preferred method.
+
+Person.givenName + Person.familyName -> Populates Thing.name
 
 ###### References
 * [Schema.org][schema]

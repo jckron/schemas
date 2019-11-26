@@ -11,6 +11,17 @@ function createTables(){
 		disambiguatingDescription TEXT,
 		identifier TEXT,
 		image varchar(250),
+		#mainEntityOfPage INT(11),
+		mainEntityOfPage VARCHAR(250),
+		name VARCHAR(250),
+		potentialAction TEXT,
+		sameAs VARCHAR(250),
+		subjectOf TEXT,
+		url VARCHAR(250),
+		power SET('0','1'),
+		recordCreated DATETIME,
+		recordModified DATETIME,
+		timestamp TIMESTAMP		
 		)";
 	$conn->query($thing);
 	// Create Organization Table
@@ -149,6 +160,53 @@ function createTables(){
 		timestamp TIMESTAMP
 		)";
 	$conn->query($person);
+	// Create Place Table
+	// Ref: https://schema.org/Place
+	$place = "CREATE TABLE Place(
+		id INT(11) AUTO_INCREMENT PRIMARY KEY,
+		additionalproperty TEXT,
+		address VARCHAR(250),
+		aggregateRating INT(11),
+		amenityFeature TEXT,
+		branchCode VARCHAR(100),
+		containedInPlace INT(11),
+		event  INT(11),
+		faxNumber VARCHAR(150),
+		geo INT(11),
+		geoContains TEXT,
+		geoCoveredBy TEXT,
+		geoCovers TEXT,
+		geoCrosses TEXT,
+		geoDisjoint TEXT,
+		geoEquals TEXT,
+		geoIntersects TEXT,
+		geoOverlaps TEXT,
+		geoTouches TEXT,
+		geoWithin TEXT,
+		globalLocationNumber INT(13),
+		hasMap VARCHAR(150),
+		isAccessibleForFree SET('0','1'),
+		isicV4 VARCHAR(100),
+		latitude VARCHAR(150),
+		logo VARCHAR(250),
+		longitude VARCHAR(150),
+		maximumAttendeeCaoacity INT(11),
+		openingHoursSpecification INT(11),
+		photo TEXT,
+		publicAccess SET('0','1'),
+		review TEXT,
+		slogan VARCHAR(250),
+		smokingAllowed SET('0','1'),
+		specialOpeningHoursSpecification INT(11),
+		telephone VARCHAR(30),
+		power SET('0','1'),
+		recordCreated DATETIME,
+		recordModified DATETIME,
+		timestamp TIMESTAMP		
+		)";
+	$conn->query($place);
+
+
 }
 
 // ****** DEBUG Table Setup ******* //
