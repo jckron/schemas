@@ -1,7 +1,12 @@
 <?php 
 function createTables(){
 	include('../config.php');
-	// Create Organizations Table
+	// Create Thing Table
+	// Ref: https://schema.org/Thing
+	$thing = "CREATE TABLE Thing(
+				)";
+	$conn->query($thing);
+	// Create Organization Table
 	// Ref: https://schema.org/Organization
 	$organization = "CREATE TABLE Organization(
 		id INT(11) AUTO_INCREMENT PRIMARY KEY,
