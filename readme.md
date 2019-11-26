@@ -1,5 +1,5 @@
 # Create MySQL tables 
-Documentation for creating MySQL tables that correspond to Schema.org structure
+Documentation for creating MySQL tables that correspond to * [Schema.org][schema] structure
 
 ## MYSQL
 
@@ -14,7 +14,7 @@ Documentation for creating MySQL tables that correspond to Schema.org structure
 
 #### Thing
 Every thing is a thing.  
-By creating a thing, that thing then has all the opportunity to become anything.  
+By creating a thing, that thing then has all the opportunity and potential to become anything.  
 So the main identifier of any*thing* in this database, is the Thing.id
 
 When a new entity of any type is created, the Thing.id must generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
@@ -136,6 +136,7 @@ Specific notes & information relating to the development of the Person schema
 #### Suggestions:
 
 ###### References
+* [schema.org][schema]
 * [Dun & Bradstreet DUNS number][duns]
 * [Global Location Number (GLN)][gln]
 
