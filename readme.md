@@ -136,9 +136,10 @@ Specific notes & information relating to the development of the Person schema
 #### Suggestions:
 
 ###### References
-* [schema.org][schema]
+* [Schema.org][schema]
 * [Dun & Bradstreet DUNS number][duns]
 * [Global Location Number (GLN)][gln]
 
+[schema]: https://schema.org
 [duns]: https://www.dnb.com/duns-number.html
 [gln]: https://www.gs1.org/standards/id-keys/gln
