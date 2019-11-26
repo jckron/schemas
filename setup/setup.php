@@ -4,6 +4,8 @@ function createTables(){
 	// Create Thing Table
 	// Ref: https://schema.org/Thing
 	$thing = "CREATE TABLE Thing(
+		id INT(11) AUTO_INCREMENT PRIMARY KEY,
+		
 				)";
 	$conn->query($thing);
 	// Create Organization Table

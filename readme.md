@@ -10,6 +10,8 @@ Documentation for creating MySQL tables that correspond to Schema.org structure
 * Tables should be created for each unique schema
 * Do not clone, replicate or duplicate fields across tables. Instead use the reference ID from the table record where the field is defined.
 
+### Table Creation:
+
 #### Thing
 Every thing is a thing.  
 By creating a thing, that thing then has all the opportunity to become anything.  
@@ -119,6 +121,15 @@ Specific notes & information relating to the development of the Person schema
 * **workLocation** is a numeric id (INT) from the "Place" table/schema (e.g. Place.id)
 * **worksFor** is a numeric id (INT) from the "Organization" table/schema (e.g. Organization.id)
 
+
+### Populating Content
+
+#### Rules:
+
+* When a new entity of any type is created, the Thing.id must generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
+
+#### Guidelines:
+#### Suggestions:
 
 ###### References
 * [Dun & Bradstreet DUNS number][duns]
