@@ -14,6 +14,7 @@ Documentation for creating MySQL tables that correspond to Schema.org structure
 Every thing is a thing.  
 By creating a thing, that thing then has all the opportunity to become anything.  
 So the main identifier of any*thing* in this database, is the Thing.id
+
 When a new entity of any type is created, the Thing.id must generated and create a new record in Thing table as well as every other table in the database, where the id for that table matches the Thing.id
 
 #### Organization
