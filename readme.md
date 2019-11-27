@@ -21,7 +21,8 @@ When a new entity of any type is created, the Thing.id must generated and create
 
 Specific notes & information relating to the development of the Thing schema
 
-* **image** is a text url, *alternatively* this can be a numeric id (INT) from the "Image" table/schema (e.g. Image.id)
+* **image** is a text url, *alternatively* this can be a numeric id (INT) from the "Image" table/schema (e.g. Image.id
+* **name** must be UNIQUE, all things have a unique name, otherwise they are the same thing
 * **potentialAction** is an array of ids from the "Action" table/schema (e.g. action.id)
 * **sameAs** set to a VARCHAR (accepts url). QUESTION: Could this be an array? i.e. Does the sameAs schema accept multiple records?
 * **subjectOf** is an array of ids from the "CreativeWork" table/schema (e.g. CreativeWork.id)
@@ -30,6 +31,7 @@ Specific notes & information relating to the development of the Thing schema
 Specific notes & information relating to the development of the Organization schema
 * **alumni** is an array of ids from the "Person" table/schema (e.g. Person.id)
 * **areaServed** is an array of ids from the "Place" table/schema (e.g. Place.id)
+* **award** is an array of ids from the "Thing" table/schema (e.g. Thing.id)
 * **brand** is a numeric id (INT) from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
 * **correctionsPolicy** is a text url, *alternatively* this can be a numeric id (INT) from the "CreativeWorks" table/schema (e.g. CreativeWork.id)
 * **department** is a numeric id (INT) from the "Organization" table/schema (e.g. Organization.id) (Self-referencing)
@@ -78,6 +80,7 @@ Specific notes & information relating to the development of the Organization sch
 Specific notes & information relating to the development of the Person schema
 * **affiliation** is an array of ids from the "Organization" table/schema (e.g. Organization.id)
 * **alumniOf** is an array of ids from the "Organization" table/schema (e.g. Organization.id)
+* **award** is an array of ids from the "Thing" table/schema (e.g. Thing.id)
 * **birthPlace** is a numeric id (INT) from the "Place" table/schema (e.g. Place.id)
 * **brand** is an array of ids from the "Organization" table/schema (e.g. Organization.id)
 * **children** is an array of ids from the "Person" table/schema (e.g. Person.id) (Self-referencing)
@@ -156,7 +159,18 @@ Specific notes & information relating to the development of the Place schema
 Specific notes & information relating to the development of the CreativeWork schema
 * **about** is a numeric id (INT) from the "CreativeWork" table/schema (e.g. CreativeWork.id) (Self-referencing)
 * **accessibility[X]** [Accessibility Values][accessibility]
-
+* **accountablePerson** is a numeric id from the "Person" table/schema (e.g. Person.id)
+* **award** is an array of ids from the "Thing" table/schema (e.g. Thing.id)
+* **character** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **citation** is an array of ids from the "CreativeWork" table/schema (e.g. CreativeWork.id) (Self-referencing)
+* **comment** is an array of ids from the "Comment" table/schema (e.g. Comment.id)
+* **contentLocation** is an array of ids from the "Place" table/schema (e.g. Place.id)
+* **contributor** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **copyrightHolder** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **correction** is an array of ids from the "CreativeWork" table/schema (e.g. CreativeWork.id) (Self-referencing)
+* **creator** is an array of ids from the "Person" table/schema (e.g. Person.id)
+* **encoding** is a numeric id (INT) from the "MediaObject" table/schema (e.g. MediaObject.id)
+* **text** *changed to* **cwText** because TEXT is a reserved property in php/mysql - "cw" for "Creative Work"
 
 ### Populating Content (Programming)
 
